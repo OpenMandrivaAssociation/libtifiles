@@ -1,14 +1,15 @@
 %define version 0.6.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 0
 %define libname %mklibname tifiles %major
+%define develname %mklibname -d tifiles
 
 Summary:	Library for Ti File Format management
 Name:		libtifiles
 Version:	%{version}
 Release:	%{release}
-License:	LGPL
+License:	LGPLv2+
 Group:		Communications
 URL:		http://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{name}-%{version}.tar.bz2
@@ -51,15 +52,16 @@ file formats:
 - TI9x calculators: TI89, 92, 92+ and V200PLT.
 
 
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	Development related files for %{name}
 Group:		Development/Other
 Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{name}-doc
 Provides:	%{name}-doc
+Obsoletes:	%mklibname -d tifiles 0
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 This package contains headers and other necessary files to develop 
 or compile applications that use %{name}.
 
@@ -90,9 +92,9 @@ rm -rf ${RPM_BUILD_ROOT}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README
 %{_includedir}/*
@@ -100,5 +102,3 @@ rm -rf ${RPM_BUILD_ROOT}
 %{_libdir}/*.la
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
-
-
