@@ -13,6 +13,7 @@ License:	LGPLv2+
 Group:		Communications
 URL:		http://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	%{libname} = %{version}
 
 %description
