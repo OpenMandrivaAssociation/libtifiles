@@ -1,5 +1,5 @@
 %define version 0.6.6
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major 0
 %define libname %mklibname tifiles %major
@@ -33,7 +33,7 @@ file formats:
 
 %package -n	%{libname}
 Summary:	Library for TI File Format management
-Group:		Communications
+Group:		System/Libraries
 Requires:	%{name} = %{version}
 
 %description -n	%{libname}
