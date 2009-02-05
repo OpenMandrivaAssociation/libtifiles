@@ -1,8 +1,7 @@
 %define version 0.6.6
 %define release %mkrel 5
 
-%define major 0
-%define libname %mklibname tifiles %major
+%define libname %mklibname tifiles
 %define develname %mklibname -d tifiles
 
 Summary:	Library for Ti File Format management
@@ -59,7 +58,7 @@ Requires:	%{libname} = %{version}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{name}-doc
 Provides:	%{name}-doc
-Obsoletes:	%mklibname -d tifiles 0
+
 
 %description -n	%{develname}
 This package contains headers and other necessary files to develop 
@@ -74,8 +73,8 @@ or compile applications that use %{name}.
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
-%makeinstall_std gnulocaledir=${RPM_BUILD_ROOT}%{_datadir}/locale
-rm -rf ${RPM_BUILD_ROOT}/%{_docdir}/%{name}-%{version}
+%makeinstall_std gnulocaledir=%{buildroot}%{_datadir}/locale
+rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 
 %find_lang %{name}
 
@@ -88,7 +87,7 @@ rm -rf ${RPM_BUILD_ROOT}/%{_docdir}/%{name}-%{version}
 %endif
 
 %clean
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
