@@ -72,7 +72,7 @@ or compile applications that use %{name}.
 %make
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 %makeinstall_std gnulocaledir=%{buildroot}%{_datadir}/locale
 rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 
