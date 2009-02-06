@@ -89,7 +89,6 @@ rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 rm -rf %{buildroot}
 
 
-%files
 %files -f %{name}.lang
 %defattr(-,root,root)
 
