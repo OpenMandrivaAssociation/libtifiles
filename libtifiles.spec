@@ -1,5 +1,5 @@
 %define version 0.6.6
-%define release %mkrel 5
+%define release %mkrel 6
 %define major 0
 %define libname %mklibname tifiles %{major}
 %define develname %mklibname -d tifiles
@@ -58,7 +58,6 @@ Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{name}-doc
 Provides:	%{name}-doc
 
-
 %description -n	%{develname}
 This package contains headers and other necessary files to develop 
 or compile applications that use %{name}.
@@ -88,16 +87,12 @@ rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 %clean
 rm -rf %{buildroot}
 
-
 %files -f %{name}.lang
 %defattr(-,root,root)
 
 %files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
-%{_datadir}/locale/fr/LC_MESSAGES/libtifiles.mo
-%doc COPYING
-
 
 %files -n %{develname}
 %defattr(-,root,root)
