@@ -1,11 +1,11 @@
-%define version 0.6.6
-%define release %mkrel 6
-%define major 0
-%define libname %mklibname tifiles %{major}
+%define version 1.1.1
+%define release %mkrel 1
+%define major 2
+%define libname %mklibname tifiles
 %define develname %mklibname -d tifiles
 
 Summary:	Library for Ti File Format management
-Name:		libtifiles
+Name:		libtifiles2
 Version:	%{version}
 Release:	%{release}
 License:	LGPLv2+
@@ -63,7 +63,7 @@ This package contains headers and other necessary files to develop
 or compile applications that use %{name}.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}
 
 %build
 %configure2_5x --enable-static=yes
