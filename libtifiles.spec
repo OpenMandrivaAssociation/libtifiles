@@ -1,21 +1,21 @@
-%define version 1.1.1
-%define release %mkrel 1
+%define oname libtifiles2
 %define major 2
-%define libname %mklibname tifiles
-%define develname %mklibname -d tifiles
+%define libname %mklibname tifiles %{major}
+%define develname %mklibname tifiles -d
 
 Summary:	Library for Ti File Format management
-Name:		libtifiles2
-Version:	%{version}
-Release:	%{release}
+Name:		libtifiles
+Version:	1.1.1
+Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Communications
 URL:		http://tilp.sourceforge.net/
-Source:		http://prdownloads.sourceforge.net/tilp/%{name}-%{version}.tar.bz2
+Source:		http://prdownloads.sourceforge.net/tilp/%{oname}-%{version}.tar.bz2
+BuildRequires:	glib2-devel
+BuildRequires:	ticonv-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	%{libname} = %{version}
 
-%description 
+%description
 The TiFiles library is a part of the TiLP project and constitutes
 with the other libraries a complete framework for developping
 and/or linking TI files oriented applications.
@@ -30,10 +30,10 @@ file formats:
   TI 73/83+ and 85/86).
 - TI9x calculators: TI89, 92, 92+ and V200PLT.
 
-%package        -n %{libname}
-Group:          System/Libraries
-Summary:        Library for Ti File Format management
-Requires:       %{name} = %{version}
+%package -n %{libname}
+Summary:	Library for Ti File Format management
+Group:		System/Libraries
+Requires:	%{name} = %{version}-%{release}
 
 %description -n %{libname}
 The TiFiles library is a part of the TiLP project and constitutes
@@ -50,12 +50,13 @@ file formats:
   TI 73/83+ and 85/86).
 - TI9x calculators: TI89, 92, 92+ and V200PLT.
 
-%package -n	%{develname}
+%package -n %{develname}
 Summary:	Development related files for %{name}
 Group:		Development/Other
-Requires:	%{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
-Obsoletes:	%{name}-doc
+Provides:	tifiles-devel = %{version}-%{release}
+Obsoletes:	%{name}-doc < %{version}
 Provides:	%{name}-doc
 
 %description -n	%{develname}
@@ -63,10 +64,11 @@ This package contains headers and other necessary files to develop
 or compile applications that use %{name}.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{oname}-%{version}
 
 %build
-%configure2_5x --enable-static=yes
+%configure2_5x
+
 %make
 
 %install
@@ -87,10 +89,7 @@ rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 %clean
 rm -rf %{buildroot}
 
-%files -f %{name}.lang
-%defattr(-,root,root)
-
-%files -n %{libname}
+%files -n %{libname} -f %{name}.lang
 %defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
 
@@ -98,7 +97,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README
 %{_includedir}/*
-%{_libdir}/*.a
 %{_libdir}/*.la
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
