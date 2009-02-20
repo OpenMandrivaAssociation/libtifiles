@@ -1,5 +1,5 @@
 %define oname libtifiles2
-%define major 2
+%define major 5
 %define libname %mklibname tifiles %{major}
 %define develname %mklibname tifiles -d
 
@@ -13,6 +13,8 @@ URL:		http://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{oname}-%{version}.tar.bz2
 BuildRequires:	glib2-devel
 BuildRequires:	ticonv-devel
+BuildRequires:	zlib-devel
+BuildRequires:	bison
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -76,7 +78,7 @@ rm -rf %{buildroot}
 %makeinstall_std gnulocaledir=%{buildroot}%{_datadir}/locale
 rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 
-%find_lang %{name}
+%find_lang %{oname}
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
@@ -89,7 +91,7 @@ rm -rf %{buildroot}/%{_docdir}/%{name}-%{version}
 %clean
 rm -rf %{buildroot}
 
-%files -n %{libname} -f %{name}.lang
+%files -n %{libname} -f %{oname}.lang
 %defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
 
