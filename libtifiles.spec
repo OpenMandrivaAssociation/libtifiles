@@ -35,7 +35,7 @@ file formats:
 %package -n %{libname}
 Summary:	Library for Ti File Format management
 Group:		System/Libraries
-Requires:	%{name} = %{version}-%{release}
+# Requires:	%{name} = %{version}-%{release}
 
 %description -n %{libname}
 The TiFiles library is a part of the TiLP project and constitutes
@@ -66,7 +66,11 @@ This package contains headers and other necessary files to develop
 or compile applications that use %{name}.
 
 %prep
+<<<<<<< .mine
+%setup -q 
+=======
 %setup -q -n %{oname}-%{version}
+>>>>>>> .r343287
 
 %build
 %configure2_5x
@@ -102,3 +106,4 @@ rm -rf %{buildroot}
 %{_libdir}/*.la
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
+%{_datadir}/locale/fr/LC_MESSAGES/libticables2.mo
