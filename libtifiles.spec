@@ -12,7 +12,7 @@ Group:		Communications
 URL:		http://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{oname}-%{version}.tar.bz2
 BuildRequires:	glib2-devel
-BuildRequires:	ticonv-devel
+BuildRequires:	ticonv-devel = 1.1.1
 BuildRequires:	zlib-devel
 BuildRequires:	bison
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
