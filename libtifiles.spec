@@ -5,14 +5,14 @@
 
 Summary:	Library for Ti File Format management
 Name:		libtifiles
-Version:	1.1.3
+Version:	1.1.5
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Communications
 URL:		http://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{oname}-%{version}.tar.bz2
 BuildRequires:	glib2-devel
-BuildRequires:	ticonv-devel = 1.1.1
+BuildRequires:	ticonv-devel = 1.1.3
 BuildRequires:	zlib-devel
 BuildRequires:	bison
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
