@@ -100,7 +100,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README
 %{_includedir}/*
-%{_libdir}/*.la
+# %{_libdir}/*.la
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 
