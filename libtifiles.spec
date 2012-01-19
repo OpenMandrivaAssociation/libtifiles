@@ -1,5 +1,5 @@
 %define oname libtifiles2
-%define major 6
+%define major 8
 %define libname %mklibname tifiles %{major}
 %define develname %mklibname tifiles -d
 
