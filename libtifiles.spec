@@ -105,8 +105,22 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/*.pc
 
 
+
+
 %changelog
-* Mon Sep 14 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.1.1-3mdv2010.0
+* Thu Jan 19 2012 Zombie Ryushu <ryushu@mandriva.org> 1.1.5-1mdv2012.0
++ Revision: 762253
+- Fix Major
+- Upgrade to 1.1.5
+- Upgrade to 1.1.5
+
+* Sun Jul 11 2010 Zombie Ryushu <ryushu@mandriva.org> 1.1.3-1mdv2011.0
++ Revision: 551019
+- Clarify deps
+- Upgrade to 1.1.3
+- Upgrade to 1.1.3
+
+* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 1.1.1-3mdv2010.0
 + Revision: 439482
 - rebuild
 
@@ -126,7 +140,7 @@ rm -rf %{buildroot}
   + Zombie Ryushu <ryushu@mandriva.org>
     - Work in progress
 
-* Wed Feb 11 2009 Funda Wang <fundawang@mandriva.org> 0.6.6-6mdv2009.1
+* Wed Feb 11 2009 Funda Wang <fwang@mandriva.org> 0.6.6-6mdv2009.1
 + Revision: 339583
 - move mo into main package rather than libpackage
 
@@ -140,7 +154,7 @@ rm -rf %{buildroot}
 - Fix BuildRoot Tags
 - Fix BuildRoot Tags
 
-* Sun Jul 27 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.6.6-5mdv2009.0
+* Sun Jul 27 2008 Thierry Vignaud <tv@mandriva.org> 0.6.6-5mdv2009.0
 + Revision: 250611
 - rebuild
 
@@ -151,17 +165,17 @@ rm -rf %{buildroot}
 + Revision: 189889
 - Fix lib group
 
-  + Olivier Blin <oblin@mandriva.com>
+  + Olivier Blin <blino@mandriva.org>
     - restore BuildRoot
 
-  + Thierry Vignaud <tvignaud@mandriva.com>
+  + Thierry Vignaud <tv@mandriva.org>
     - kill re-definition of %%buildroot on Pixel's request
 
-* Mon Dec 10 2007 Funda Wang <fundawang@mandriva.org> 0.6.6-2mdv2008.1
+* Mon Dec 10 2007 Funda Wang <fwang@mandriva.org> 0.6.6-2mdv2008.1
 + Revision: 116814
 - New license policy
 
-  + Thierry Vignaud <tvignaud@mandriva.com>
+  + Thierry Vignaud <tv@mandriva.org>
     - kill changelog left by repsys
 
 
