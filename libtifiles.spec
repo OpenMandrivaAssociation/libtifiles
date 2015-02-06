@@ -6,7 +6,7 @@
 Summary:	Library for Ti File Format management
 Name:		libtifiles
 Version:	1.1.5
-Release:	%mkrel 1
+Release:	2
 License:	LGPLv2+
 Group:		Communications
 URL:		http://tilp.sourceforge.net/
