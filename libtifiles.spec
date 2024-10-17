@@ -9,7 +9,7 @@ Version:	1.1.5
 Release:	2
 License:	LGPLv2+
 Group:		Communications
-URL:		http://tilp.sourceforge.net/
+URL:		https://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{oname}-%{version}.tar.bz2
 BuildRequires:	glib2-devel
 BuildRequires:	ticonv-devel = 1.1.3
