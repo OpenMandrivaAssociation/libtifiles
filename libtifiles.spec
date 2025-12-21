@@ -11,6 +11,11 @@ License:	LGPLv2+
 Group:		Communications
 URL:		https://tilp.sourceforge.net/
 Source:		http://prdownloads.sourceforge.net/tilp/%{oname}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	glib2-devel
 BuildRequires:	ticonv-devel = 1.1.3
 BuildRequires:	zlib-devel
